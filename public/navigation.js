@@ -1,7 +1,6 @@
 window.addEventListener(
   "load",
   () => {
-    console.log("loaded");
     addNavigation();
   },
   false
@@ -14,6 +13,10 @@ const addNavigation = () => {
   const message4 = document.querySelector("#message-4");
   const message5 = document.querySelector("#message-5");
   const message6 = document.querySelector("#message-6");
+  const message7 = document.querySelector("#message-7");
+  const message8 = document.querySelector("#message-8");
+  const message9 = document.querySelector("#message-9");
+  const message10 = document.querySelector("#message-10");
   const backgroundVideo = document.querySelector("#background-video");
   const backgroundAudio = document.querySelector("#background-audio");
 
@@ -44,5 +47,26 @@ const addNavigation = () => {
   message5.addEventListener("click", () => {
     message5.style.display = "none";
     message6.style.display = "flex";
+  });
+
+  message6.addEventListener("click", () => {
+    message6.style.display = "none";
+    message7.style.display = "flex";
+  });
+
+  message7.addEventListener("click", () => {
+    message7.style.display = "none";
+    let myp5 = new p5(s, "p5sketch");
+    message8.style.display = "flex";
+  });
+
+  message8.addEventListener("click", () => {
+    message8.style.display = "none";
+    message9.style.display = "flex";
+  });
+
+  message9.addEventListener("click", () => {
+    message9.style.display = "none";
+    message10.style.display = "flex";
   });
 };

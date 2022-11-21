@@ -6,6 +6,7 @@ let video;
 let segmentation;
 let sunscreenBuff;
 let sunscreenClone;
+let videoStarted = false;
 
 const options = {
   outputStride: 8, // 8, 16, or 32, default is 16
@@ -13,6 +14,7 @@ const options = {
 };
 
 function preload() {
+  console.log("preload");
   bodypix = ml5.bodyPix(options);
 }
 
@@ -20,6 +22,7 @@ function setup() {
   createCanvas(width, height); //i think that if i don't add this, it defaults to a 200x200 canvas
 
   video = createCapture(VIDEO, videoReady);
+  console.log(video);
 
   video.position(0, 0);
   video.size(400, 400);
