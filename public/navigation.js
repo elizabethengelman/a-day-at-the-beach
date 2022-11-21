@@ -56,7 +56,7 @@ const addNavigation = () => {
 
   message7.addEventListener("click", () => {
     message7.style.display = "none";
-    let myp5 = new p5(s, "p5sketch");
+    let myp5 = new p5(s, document.getElementById("p5sketch"));
     message8.style.display = "flex";
   });
 
