@@ -46,11 +46,11 @@ const s = (sketch) => {
 
     // want to use the background mask in the sunscreenBuff as well to keep the sunscreen from loading onto the background part.
     sunscreenBuff.noStroke();
-    sunscreenBuff.fill(255, 0, 0);
+    sunscreenBuff.fill(84, 100, 247);
     sunscreenBuff.ellipse(sketch.mouseX, sketch.mouseY, 33, 33);
     sunscreenClone = sunscreenBuff.get();
 
-    sketch.background(43, 157, 247);
+    sketch.background(120, 239, 255);
     if (segmentation) {
       // for this first iteration, we actually don't want to hide the background, but more, use this for the sunscreen buff
       // image(segmentation.backgroundMask, 0, 0, width, height);

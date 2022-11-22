@@ -17,6 +17,10 @@ const addNavigation = () => {
   const message8 = document.getElementById("message-8");
   const message9 = document.getElementById("message-9");
   const message10 = document.getElementById("message-10");
+  const message11 = document.getElementById("message-11");
+  const message12 = document.getElementById("message-12");
+  const message13 = document.getElementById("message-13");
+  const message14 = document.getElementById("message-14");
   const backgroundVideo = document.getElementById("background-video");
   const backgroundAudio = document.getElementById("background-audio");
 
@@ -56,7 +60,6 @@ const addNavigation = () => {
 
   message7.addEventListener("click", () => {
     message7.style.display = "none";
-    let myp5 = new p5(s, document.getElementById("p5sketch"));
     message8.style.display = "flex";
   });
 
@@ -68,5 +71,27 @@ const addNavigation = () => {
   message9.addEventListener("click", () => {
     message9.style.display = "none";
     message10.style.display = "flex";
+  });
+
+  message10.addEventListener("click", () => {
+    message10.style.display = "none";
+    backgroundVideo.classList.add("brightness-125");
+    message11.style.display = "flex"; //worried about sun damage
+  });
+
+  message11.addEventListener("click", () => {
+    message11.style.display = "none";
+    message12.style.display = "flex";
+  });
+
+  message12.addEventListener("click", () => {
+    message12.style.display = "none";
+    let myp5 = new p5(s, document.getElementById("p5sketch"));
+    message13.style.display = "flex"; //egyptians
+  });
+
+  message13.addEventListener("click", () => {
+    message13.style.display = "none";
+    message14.style.display = "flex";
   });
 };
