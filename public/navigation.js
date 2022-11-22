@@ -21,6 +21,8 @@ const addNavigation = () => {
   const message12 = document.getElementById("message-12");
   const message13 = document.getElementById("message-13");
   const message14 = document.getElementById("message-14");
+  const message15 = document.getElementById("message-15");
+  const message16 = document.getElementById("message-16");
   const backgroundVideo = document.getElementById("background-video");
   const backgroundAudio = document.getElementById("background-audio");
 
@@ -90,12 +92,32 @@ const addNavigation = () => {
       sketchBuilder("purple"),
       document.getElementById("p5sketch")
     );
-    myp5.sunscreenColor = "purple";
     message13.style.display = "flex"; //egyptians
   });
 
   message13.addEventListener("click", () => {
+    document.getElementById("defaultCanvas0").classList.add("hidden"); //fixme: is there a way to set this?
     message13.style.display = "none";
+    let myp5 = new p5(
+      sketchBuilder("green"),
+      document.getElementById("p5sketch")
+    );
     message14.style.display = "flex";
+  });
+
+  message14.addEventListener("click", () => {
+    document.getElementById("defaultCanvas1").classList.add("hidden"); //fixme: is there a way to set this?
+    message14.style.display = "none";
+    let myp5 = new p5(
+      sketchBuilder("white"),
+      document.getElementById("p5sketch")
+    );
+    message15.style.display = "flex";
+  });
+
+  message15.addEventListener("click", () => {
+    document.getElementById("defaultCanvas2").classList.add("hidden"); //fixme: is there a way to set this?
+    message15.style.display = "none";
+    message16.style.display = "flex";
   });
 };
