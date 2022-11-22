@@ -50,7 +50,7 @@ const s = (sketch) => {
     sunscreenBuff.ellipse(sketch.mouseX, sketch.mouseY, 33, 33);
     sunscreenClone = sunscreenBuff.get();
 
-    sketch.background(0)
+    sketch.background(43, 157, 247);
     if (segmentation) {
       // for this first iteration, we actually don't want to hide the background, but more, use this for the sunscreen buff
       // image(segmentation.backgroundMask, 0, 0, width, height);
@@ -64,9 +64,9 @@ const s = (sketch) => {
       sunscreenClone.mask(segmentation.backgroundMask);
     }
 
-    sketch.push()
+    sketch.push();
     sketch.tint(255, 50);
     sketch.image(sunscreenClone, 0, 0);
-    sketch.pop()
+    sketch.pop();
   };
 };
