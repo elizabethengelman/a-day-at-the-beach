@@ -7,18 +7,18 @@ window.addEventListener(
 );
 
 const addNavigation = () => {
-  const message1 = document.querySelector("#message-1");
-  const message2 = document.querySelector("#message-2");
-  const message3 = document.querySelector("#message-3");
-  const message4 = document.querySelector("#message-4");
-  const message5 = document.querySelector("#message-5");
-  const message6 = document.querySelector("#message-6");
-  const message7 = document.querySelector("#message-7");
-  const message8 = document.querySelector("#message-8");
-  const message9 = document.querySelector("#message-9");
-  const message10 = document.querySelector("#message-10");
-  const backgroundVideo = document.querySelector("#background-video");
-  const backgroundAudio = document.querySelector("#background-audio");
+  const message1 = document.getElementById("message-1");
+  const message2 = document.getElementById("message-2");
+  const message3 = document.getElementById("message-3");
+  const message4 = document.getElementById("message-4");
+  const message5 = document.getElementById("message-5");
+  const message6 = document.getElementById("message-6");
+  const message7 = document.getElementById("message-7");
+  const message8 = document.getElementById("message-8");
+  const message9 = document.getElementById("message-9");
+  const message10 = document.getElementById("message-10");
+  const backgroundVideo = document.getElementById("background-video");
+  const backgroundAudio = document.getElementById("background-audio");
 
   message1.addEventListener("click", () => {
     message1.style.display = "none";

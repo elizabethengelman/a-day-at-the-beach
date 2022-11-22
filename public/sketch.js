@@ -1,6 +1,6 @@
 const s = (sketch) => {
-  const width = 400;
-  const height = 300;
+  const width = 600;
+  const height = 450;
   let bodypix;
   let video;
   let segmentation;
