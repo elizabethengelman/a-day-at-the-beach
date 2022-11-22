@@ -23,6 +23,11 @@ const addNavigation = () => {
   const message14 = document.getElementById("message-14");
   const message15 = document.getElementById("message-15");
   const message16 = document.getElementById("message-16");
+  const message17 = document.getElementById("message-17");
+  const message18 = document.getElementById("message-18");
+  const message19 = document.getElementById("message-19");
+  const message20 = document.getElementById("message-20");
+  const message21 = document.getElementById("message-21");
   const backgroundVideo = document.getElementById("background-video");
   const backgroundAudio = document.getElementById("background-audio");
 
@@ -119,5 +124,38 @@ const addNavigation = () => {
     document.getElementById("defaultCanvas2").classList.add("hidden"); //fixme: is there a way to set this?
     message15.style.display = "none";
     message16.style.display = "flex";
+  });
+
+  message16.addEventListener("click", () => {
+    message16.style.display = "none";
+    message17.style.display = "flex";
+  });
+
+  message17.addEventListener("click", () => {
+    message17.style.display = "none";
+    message18.style.display = "flex";
+  });
+
+  message18.addEventListener("click", () => {
+    message18.style.display = "none";
+    message19.style.display = "flex";
+  });
+
+  message19.addEventListener("click", () => {
+    message19.style.display = "none";
+    message20.style.display = "flex";
+  });
+
+  message20.addEventListener("click", () => {
+    message20.style.display = "none";
+    message21.style.display = "flex";
+  });
+
+  message21.addEventListener("click", () => {
+    let title = document.getElementById("title");
+
+    document.querySelector("main").classList.add("bg-black");
+    backgroundAudio.pause();
+    backgroundVideo.pause();
   });
 };
