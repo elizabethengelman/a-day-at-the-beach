@@ -3,6 +3,9 @@ module.exports = {
   content: ["./public/**/*.{html,js}"],
   theme: {
     extend: {
+      fontFamily: {
+        montserrat: ['"Montserrat"', "sans-serif"],
+      },
       backgroundImage: {
         beach: "url(/images/beach.gif)",
       },
