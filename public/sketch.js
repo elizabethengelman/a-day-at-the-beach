@@ -50,6 +50,7 @@ const s = (sketch) => {
     sunscreenBuff.ellipse(sketch.mouseX, sketch.mouseY, 33, 33);
     sunscreenClone = sunscreenBuff.get();
 
+    sketch.background(0)
     if (segmentation) {
       // for this first iteration, we actually don't want to hide the background, but more, use this for the sunscreen buff
       // image(segmentation.backgroundMask, 0, 0, width, height);
@@ -57,11 +58,15 @@ const s = (sketch) => {
       //don't want to show the backgroundmask as an image, but want to use it as a mask on the sunscreen buff
 
       //i hadn't thought this through entirely, and was thinking that I could get the red on the person... but that if they moved it would stay in place. but, if im using this backgroundSegment... then i think the red would move too? or at lease the mask
+      // this allows for the person to be rendered without their background1
+      sketch.image(segmentation.backgroundMask, 0, 0, width, height);
 
       sunscreenClone.mask(segmentation.backgroundMask);
     }
 
+    sketch.push()
     sketch.tint(255, 50);
     sketch.image(sunscreenClone, 0, 0);
+    sketch.pop()
   };
 };
