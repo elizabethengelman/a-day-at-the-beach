@@ -93,6 +93,7 @@ const addNavigation = () => {
 
   message12.addEventListener("click", () => {
     message12.style.display = "none";
+    document.getElementById("p5sketch").classList.add("border-2");
     let myp5 = new p5(
       sketchBuilder("purple"),
       document.getElementById("p5sketch")
@@ -121,6 +122,7 @@ const addNavigation = () => {
   });
 
   message15.addEventListener("click", () => {
+    document.getElementById("p5sketch").classList.remove("border-2");
     document.getElementById("defaultCanvas2").classList.add("hidden"); //fixme: is there a way to set this?
     message15.style.display = "none";
     message16.style.display = "flex";
@@ -153,7 +155,6 @@ const addNavigation = () => {
 
   message21.addEventListener("click", () => {
     let title = document.getElementById("title");
-
     document.querySelector("main").classList.add("bg-black");
     backgroundAudio.pause();
     backgroundVideo.pause();
