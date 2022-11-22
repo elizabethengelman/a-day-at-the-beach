@@ -86,7 +86,11 @@ const addNavigation = () => {
 
   message12.addEventListener("click", () => {
     message12.style.display = "none";
-    let myp5 = new p5(s, document.getElementById("p5sketch"));
+    let myp5 = new p5(
+      sketchBuilder("purple"),
+      document.getElementById("p5sketch")
+    );
+    myp5.sunscreenColor = "purple";
     message13.style.display = "flex"; //egyptians
   });
 
