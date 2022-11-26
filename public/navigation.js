@@ -93,7 +93,6 @@ const addNavigation = () => {
 
   message12.addEventListener("click", () => {
     message12.style.display = "none";
-    document.getElementById("p5sketch").classList.add("border-2");
     let myp5 = new p5(
       sketchBuilder("purple"),
       document.getElementById("p5sketch")

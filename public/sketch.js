@@ -21,7 +21,7 @@ function sketchBuilder(sunscreenColor) {
       sketch.textSize(16);
       sketch.text("Loading...", width / 2, height / 2);
 
-      // load up your video
+      // load up webcam video
       video = sketch.createCapture(sketch.VIDEO);
       video.size(sketch.width, sketch.height);
       video.hide();
@@ -44,7 +44,7 @@ function sketchBuilder(sunscreenColor) {
     }
 
     sketch.draw = function () {
-      sketch.image(video, 0, 0);
+      sketch.clear();
 
       // want to use the background mask in the sunscreenBuff as well to keep the sunscreen from loading onto the background part.
       sunscreenBuff.noStroke();
@@ -52,10 +52,10 @@ function sketchBuilder(sunscreenColor) {
       sunscreenBuff.ellipse(sketch.mouseX, sketch.mouseY, 33, 33);
       sunscreenClone = sunscreenBuff.get();
 
-      // sketch.background(120, 239, 255); //need to keep drawing the background, otherwise we get a trailing effect with the video
       if (segmentation) {
-        // sketch.image(segmentation.backgroundMask, 0, 0, width, height);
-
+        // draw the webcam capture on the sketch with the background masked out
+        sketch.image(segmentation.backgroundMask, 0, 0, width, height);
+        // draw the sunscreen clone image (the ellipses just on the person)
         sunscreenClone.mask(segmentation.backgroundMask);
       }
 
