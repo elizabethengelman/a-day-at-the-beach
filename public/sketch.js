@@ -44,8 +44,6 @@ function sketchBuilder(sunscreenColor) {
     }
 
     sketch.draw = function () {
-      sketch.clear();
-
       // want to use the background mask in the sunscreenBuff as well to keep the sunscreen from loading onto the background part.
       sunscreenBuff.noStroke();
       sunscreenBuff.fill(sunscreenColor);
@@ -53,6 +51,7 @@ function sketchBuilder(sunscreenColor) {
       sunscreenClone = sunscreenBuff.get();
 
       if (segmentation) {
+        sketch.clear();
         // draw the webcam capture on the sketch with the background masked out
         sketch.image(segmentation.backgroundMask, 0, 0, width, height);
         // draw the sunscreen clone image (the ellipses just on the person)
