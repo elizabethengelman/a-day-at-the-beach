@@ -95,9 +95,13 @@ const addNavigation = () => {
     message12.style.display = "flex";
   });
 
+  let p5One;
+  let p5Two;
+  let p5Three;
+
   message12.addEventListener("click", () => {
     message12.style.display = "none";
-    let myp5 = new p5(
+    p5One = new p5(
       sketchBuilder("purple"),
       document.getElementById("p5sketch")
     );
@@ -105,19 +109,16 @@ const addNavigation = () => {
   });
 
   message13.addEventListener("click", () => {
-    document.getElementById("defaultCanvas0").classList.add("hidden"); //fixme: is there a way to set the canvas ids?
+    p5One.remove();
     message13.style.display = "none";
-    let myp5 = new p5(
-      sketchBuilder("green"),
-      document.getElementById("p5sketch")
-    );
+    p5Two = new p5(sketchBuilder("green"), document.getElementById("p5sketch"));
     message14.style.display = "flex";
   });
 
   message14.addEventListener("click", () => {
-    document.getElementById("defaultCanvas1").classList.add("hidden"); //fixme: is there a way to set the canvas ids?
+    p5Two.remove();
     message14.style.display = "none";
-    let myp5 = new p5(
+    p5Three = new p5(
       sketchBuilder("white"),
       document.getElementById("p5sketch")
     );
@@ -125,8 +126,7 @@ const addNavigation = () => {
   });
 
   message15.addEventListener("click", () => {
-    document.getElementById("p5sketch").classList.remove("border-2");
-    document.getElementById("defaultCanvas2").classList.add("hidden"); //fixme: is there a way to set the canvas ids?
+    p5Three.remove();
     message15.style.display = "none";
     message16.style.display = "flex";
   });
