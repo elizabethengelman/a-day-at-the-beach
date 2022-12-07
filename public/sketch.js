@@ -19,6 +19,7 @@ function sketchBuilder(sunscreenColor) {
 
       sketch.createCanvas(width, height);
       sketch.textSize(20);
+      sketch.fill("#f9fafb");
       sketch.text("Loading...", width / 2, height / 2);
 
       // load up webcam video
