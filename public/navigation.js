@@ -156,6 +156,7 @@ const addNavigation = () => {
   message21.addEventListener("click", () => {
     message21.style.display = "none";
     message22.style.display = "flex";
+    finalMessage.style.display = "flex"
 
     let title = document.getElementById("title");
     document.querySelector("main").classList.add("bg-black");
