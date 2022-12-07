@@ -161,7 +161,6 @@ const addNavigation = () => {
     message22.style.display = "flex";
     main.classList.add("justify-between");
     finalMessage.style.display = "flex";
-    startOver.style.display = "flex";
 
     let title = document.getElementById("title");
     document.querySelector("main").classList.add("bg-black");
