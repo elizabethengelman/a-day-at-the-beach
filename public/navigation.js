@@ -29,6 +29,9 @@ const addNavigation = () => {
   const message20 = document.getElementById("message-20");
   const message21 = document.getElementById("message-21");
   const message22 = document.getElementById("message-22");
+  const finalMessage = document.getElementById("final-message");
+  const startOver = document.getElementById("start-over");
+  const main = document.querySelector("main");
   const backgroundVideo = document.getElementById("background-video");
   const backgroundAudio = document.getElementById("background-audio");
 
@@ -102,7 +105,7 @@ const addNavigation = () => {
   });
 
   message13.addEventListener("click", () => {
-    document.getElementById("defaultCanvas0").classList.add("hidden"); //fixme: is there a way to set this?
+    document.getElementById("defaultCanvas0").classList.add("hidden"); //fixme: is there a way to set the canvas ids?
     message13.style.display = "none";
     let myp5 = new p5(
       sketchBuilder("green"),
@@ -112,7 +115,7 @@ const addNavigation = () => {
   });
 
   message14.addEventListener("click", () => {
-    document.getElementById("defaultCanvas1").classList.add("hidden"); //fixme: is there a way to set this?
+    document.getElementById("defaultCanvas1").classList.add("hidden"); //fixme: is there a way to set the canvas ids?
     message14.style.display = "none";
     let myp5 = new p5(
       sketchBuilder("white"),
@@ -123,7 +126,7 @@ const addNavigation = () => {
 
   message15.addEventListener("click", () => {
     document.getElementById("p5sketch").classList.remove("border-2");
-    document.getElementById("defaultCanvas2").classList.add("hidden"); //fixme: is there a way to set this?
+    document.getElementById("defaultCanvas2").classList.add("hidden"); //fixme: is there a way to set the canvas ids?
     message15.style.display = "none";
     message16.style.display = "flex";
   });
@@ -156,11 +159,17 @@ const addNavigation = () => {
   message21.addEventListener("click", () => {
     message21.style.display = "none";
     message22.style.display = "flex";
-    finalMessage.style.display = "flex"
+    main.classList.add("justify-between");
+    finalMessage.style.display = "flex";
+    startOver.style.display = "flex";
 
     let title = document.getElementById("title");
     document.querySelector("main").classList.add("bg-black");
     backgroundAudio.pause();
     backgroundVideo.pause();
+  });
+
+  startOver.addEventListener("click", () => {
+    location.reload();
   });
 };
