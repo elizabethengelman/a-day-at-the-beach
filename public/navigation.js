@@ -28,6 +28,7 @@ const addNavigation = () => {
   const message19 = document.getElementById("message-19");
   const message20 = document.getElementById("message-20");
   const message21 = document.getElementById("message-21");
+  const message22 = document.getElementById("message-22");
   const backgroundVideo = document.getElementById("background-video");
   const backgroundAudio = document.getElementById("background-audio");
 
@@ -153,6 +154,9 @@ const addNavigation = () => {
   });
 
   message21.addEventListener("click", () => {
+    message21.style.display = "none";
+    message22.style.display = "flex";
+
     let title = document.getElementById("title");
     document.querySelector("main").classList.add("bg-black");
     backgroundAudio.pause();

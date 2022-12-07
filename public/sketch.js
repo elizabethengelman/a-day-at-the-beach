@@ -18,7 +18,7 @@ function sketchBuilder(sunscreenColor) {
       ml5.p5Utils.setP5Instance(sketch);
 
       sketch.createCanvas(width, height);
-      sketch.textSize(16);
+      sketch.textSize(20);
       sketch.text("Loading...", width / 2, height / 2);
 
       // load up webcam video
