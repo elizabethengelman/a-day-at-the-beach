@@ -127,6 +127,7 @@ const addNavigation = () => {
 
   message15.addEventListener("click", () => {
     p5Three.remove();
+    stopVideoStreams();
     message15.style.display = "none";
     message16.style.display = "flex";
   });

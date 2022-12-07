@@ -1,3 +1,10 @@
+const videoStreams = [];
+function stopVideoStreams() {
+  videoStreams.forEach((stream) => {
+    stream.elt.srcObject.getTracks().forEach((track) => track.stop());
+  });
+  videoStreams.length = 0;
+}
 function sketchBuilder(sunscreenColor) {
   return (sketch) => {
     const width = 600;
@@ -26,6 +33,9 @@ function sketchBuilder(sunscreenColor) {
       video = sketch.createCapture(sketch.VIDEO);
       video.size(sketch.width, sketch.height);
       video.hide();
+
+      videoStreams.push(video);
+
       bodypix = ml5.bodyPix(video, videoReady);
 
       sunscreenBuff = sketch.createGraphics(width, height);
