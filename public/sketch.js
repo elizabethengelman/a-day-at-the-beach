@@ -9,8 +9,11 @@ function sketchBuilder(sunscreenColor) {
   return (sketch) => {
     const width = 600;
     const height = 450;
-    let bodypix;
     let video;
+    let poseNet;
+    let ready;
+    let poses = [];
+    let bodypix;
     let segmentation;
     let sunscreenBuff;
     let sunscreenClone;
@@ -33,13 +36,20 @@ function sketchBuilder(sunscreenColor) {
       video = sketch.createCapture(sketch.VIDEO);
       video.size(sketch.width, sketch.height);
       video.hide();
-
+      // capturing the video streams so we can clean them up (aka turn off the web cam)
       videoStreams.push(video);
 
       bodypix = ml5.bodyPix(video, videoReady);
-
+      poseNet = ml5.poseNet(video, modelReady);
+      poseNet.on("pose", function (results) {
+        poses = results.map((result) => result.pose.leftWrist);
+      });
       sunscreenBuff = sketch.createGraphics(width, height);
     };
+
+    function modelReady() {
+      ready = true;
+    }
 
     function videoReady() {
       bodypix.segment(video, gotResults);
@@ -55,6 +65,9 @@ function sketchBuilder(sunscreenColor) {
     }
 
     sketch.draw = function () {
+      if (poses.length === 3) {
+        console.log(poses);
+      }
       // want to use the background mask in the sunscreenBuff as well to keep the sunscreen from loading onto the background part.
       sunscreenBuff.noStroke();
       sunscreenBuff.fill(sunscreenColor);
