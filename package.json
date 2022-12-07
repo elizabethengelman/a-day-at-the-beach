@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "tailwind:css": "postcss public/styles/tailwind.css -o public/styles/style.css -w",
-    "start": "tailwind:css & nodemon"
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
