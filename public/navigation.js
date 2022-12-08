@@ -48,7 +48,7 @@ const addNavigation = () => {
 
   message3.addEventListener("click", () => {
     message3.style.display = "none";
-    backgroundAudio.volume = 0.5;
+    backgroundAudio.volume = 0.05;
     backgroundAudio.play();
     message4.style.display = "flex"; //sound
   });
